@@ -1,0 +1,75 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font-family: arial;
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #888;
+  background: #888;
+  color: white;
+  padding: 0.5rem;
+}
+
+nav {
+  /* background: linear-gradient(#9198e5, #f4f4f4); */
+  padding-left: 0;
+}
+
+nav ul {
+  padding-left: 0;
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 1rem 0;
+  padding-left: 0;
+}
+
+nav ul li a {
+  padding: 1rem;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s;
+}
+
+main {
+  min-height: 40vh;
+}
+
+#msg,
+#temperature,
+#rain {
+  padding: 0.6rem 0.4rem;
+}
+
+footer {
+  text-align: center;
+  bottom: 0;
+  color: #888;
+  border-top: 1px solid lightgray;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}

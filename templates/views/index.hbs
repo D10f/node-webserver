@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Weather App - Index</title>
+  </head>
+  <body>
+    {{>navbar}}
+    <main>
+      <img src="/img/travel.png" width="48px" height="48px" alt="desert island with a suitcase">
+      <form id="weather-form">
+        <input type="search" name="search" placeholder="Enter location">
+        <button type="submit" name="searchbtn">Search</button>
+      </form>
+      <div id="weather-data">
+        <p id="msg"></p>
+        <p id="summary"></p>
+        <p id="temperature"></p>
+        <p id="rain"></p>
+      </div>
+    </main>
+    {{>footer}}
+    <script type="text/javascript" src="/js/main.js"></script>
+  </body>
+</html>
