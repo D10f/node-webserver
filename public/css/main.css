@@ -60,6 +60,7 @@ main {
 }
 
 #msg,
+#summary,
 #temperature,
 #rain {
   padding: 0.6rem 0.4rem;

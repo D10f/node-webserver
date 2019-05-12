@@ -32,6 +32,6 @@ document.getElementById('weather-form').addEventListener('submit', (e) => {
     })
     .catch(err => {
       console.log(err);
-      res.send(`Error: ${err}`);
+      msg.textContent = err;
     })
 });

@@ -52,7 +52,6 @@ const forecast = (lat, lon, callback) => {
     } else if(body.error) {
       callback(body.error)
     } else {
-      console.log(data)
       const { temperature, precipProbability } = body.currently;
       const { summary } = body.hourly;
       callback(null, {
