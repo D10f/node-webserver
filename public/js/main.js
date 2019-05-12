@@ -14,7 +14,7 @@ document.getElementById('weather-form').addEventListener('submit', (e) => {
   temp.textContent = ''
   rain.textContent = ''
 
-  fetch(`http://localhost:3000/weather?location=${location}`)
+  fetch(`/weather?location=${location}`)
     .then(res => res.json())
     .then(data => {
       if(data.error){
