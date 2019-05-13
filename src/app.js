@@ -42,7 +42,6 @@ app.get('/about', (req, res, next) => {
   });
 });
 
-
 const forecast = (lat, lon, callback) => {
   const darkskyurl = `https://api.darksky.net/forecast/9504f6863404bc894d5f35759fbdcc1d/${lat},${lon}/?units=si&limit=1`
   // applying destructuring...
@@ -82,7 +81,6 @@ const geocode = (location, callback) => {
   });
 }
 
-
 app.get('/weather', (req, res, next) => {
   if(!req.query.location){
     return res.send({
@@ -90,14 +88,17 @@ app.get('/weather', (req, res, next) => {
     })
   }
 
-  geocode(req.query.location.toLowerCase(), (err, data) => {
-    if(err){
-      return res.send({err});
+  geocode(req.query.location.toLowerCase(), (error, data) => {
+    if(error){
+      return res.send({error});
     }
 
     const geolocation = data.location
 
-    forecast(data.longitude, data.latitude, (err, data) => {
+    forecast(data.longitude, data.latitude, (error, data) => {
+      if(error){
+        return res.send(error)
+      }
       res.send({
         location: geolocation,
         forecast: {
@@ -108,7 +109,6 @@ app.get('/weather', (req, res, next) => {
       })
     });
   });
-
 });
 
 app.get('/help/*', (req, res) => {
