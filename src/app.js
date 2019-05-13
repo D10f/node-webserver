@@ -82,13 +82,13 @@ const geocode = (location, callback) => {
 }
 
 app.get('/weather', (req, res, next) => {
-  if(!req.query.location){
+  if(!req.query.address){
     return res.send({
       error: 'You must provide a location'
     })
   }
 
-  geocode(req.query.location.toLowerCase(), (error, data) => {
+  geocode(req.query.address.toLowerCase(), (error, data) => {
     if(error){
       return res.send({error});
     }
