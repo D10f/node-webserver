@@ -43,7 +43,7 @@ app.get('/about', (req, res, next) => {
 });
 
 const forecast = (lat, lon, callback) => {
-  const darkskyurl = `https://api.darksky.net/forecast/9504f6863404bc894d5f35759fbdcc1d/${lat},${lon}/?units=si&limit=1`
+  const darkskyurl = `https://api.darksky.net/forecast/${config.api}/${lat},${lon}/?units=si&limit=1`
   // applying destructuring...
   request({url: darkskyurl, json: true}, (err, {body}) => {
     if(err){
@@ -63,7 +63,7 @@ const forecast = (lat, lon, callback) => {
 };
 
 const geocode = (location, callback) => {
-  const mapboxurl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(location)}.json?access_token=pk.eyJ1IjoiaGVyb2t1bnQiLCJhIjoiY2p2aWFlcTRuMDN1ZTN5cWxvcTRpczB0YiJ9.o4anegaEcRS-EtfX6eaM2A`
+  const mapboxurl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(location)}.json?access_token=${config.jwt}`
   request({ url: mapboxurl, json: true}, (err, {body}) => {
     if (err){
       callback(err)
